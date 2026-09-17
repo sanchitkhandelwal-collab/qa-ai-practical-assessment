@@ -1,0 +1,19 @@
+TC_ID,Type,Tag,Requirement,Precondition,Test Data,Steps,Expected Result,Priority,Status
+MAN-01,Manual,Smoke,AC1 Registration,User is logged out,Unique email + valid mandatory fields,"Open Register; enter valid details; submit","Account is created and user reaches login; no validation errors",High,Not Run
+MAN-02,Manual,Smoke,AC1 Login/Profile,Registered user exists,Valid registered credentials,"Open Login; enter credentials; submit; open profile","Authenticated account/profile is visible",High,Not Run
+MAN-03,Manual,Regression,AC1 Negative/Logout,Registered user exists,Wrong password,"Login with wrong password; then login successfully and logout","Invalid credentials show error; logout returns user to unauthenticated state",High,Not Run
+MAN-04,Manual,Smoke,AC2 Browse/Cart,User logged in,Two in-stock products,"Browse products; add two products; open cart","Both products appear with correct quantities and prices",High,Not Run
+MAN-05,Manual,Regression,AC2 Quantity/Total,Products in cart,Quantity 2 for first item,"Change quantity to 2; refresh; inspect cart","Quantity persists and cart total recalculates correctly",High,Not Run
+MAN-06,Manual,Regression,AC2 Checkout/Invoice,Logged-in user with cart,Valid address + Cash on Delivery,"Checkout; choose Cash on Delivery; confirm; confirm second step; open My Invoices","Order completes; invoice is created; invoice number is visible and invoice total matches order",Critical,Not Run
+UI-01,UI,Smoke,AC1 Registration,Logged out,Generated valid user,"Automated registration flow","Redirect to login and successful registration feedback",High,Not Run
+UI-02,UI,Smoke,AC1 Login/Profile,Registered default user,Valid credentials,"Automated login","Authenticated page/profile is displayed",High,Not Run
+UI-03,UI,Regression,AC1 Negative Login,Logged out,Invalid credentials,"Automated invalid login","Error/validation feedback is displayed",Medium,Not Run
+UI-04,UI,Smoke,AC2 Search,Home page,Search term pliers,"Search for pliers","Matching product cards are shown",Medium,Not Run
+UI-05,UI,Regression,AC2 Cart Update,Logged-in user,Two products,Quantity 2,"Add multiple products; open cart; update quantity","Both products remain; quantity and total update",High,Not Run
+UI-06,UI,Regression,AC2 Checkout/Invoice,Logged-in user with cart,COD,"Checkout; Cash on Delivery; confirm twice; My Invoices","Invoice number is visible and matches invoice pattern",Critical,Not Run
+API-01,API,Smoke,AC1 Registration,API reachable,Unique valid user,"POST /users/register","HTTP 201 and created user response",High,Not Run
+API-02,API,Smoke,AC1 Login,Registered/default user,Valid credentials,"POST /users/login","HTTP 200 and bearer token",High,Not Run
+API-03,API,Smoke,AC1 Identity,Valid bearer token,Token from login,"GET /users/me","HTTP 200 and email matches token user",High,Not Run
+API-04,API,Regression,AC2 Products,API reachable,None,"GET /products?page=1","HTTP 200; product list contains id and price",Medium,Not Run
+API-05,API,Regression,AC2 Cart,Valid bearer token,Two product IDs,"POST /carts; POST /carts/{id} twice; GET /carts/{id}","Cart is created and contains selected products",Critical,Not Run
+API-06,API,Regression,AC2 Invoice Contract,Valid bearer token,Existing user invoices,"GET /invoices","HTTP 200; invoice list schema is valid; invoice number follows INV pattern when data exists",High,Not Run
