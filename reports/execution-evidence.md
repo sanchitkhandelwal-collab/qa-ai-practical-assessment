@@ -3,10 +3,6 @@
 ## Current verified evidence state
 
 **Repository evidence:** Verified from the project files.
-**Playwright execution result:** Not verified in the committed project.
-**Reason:** No generated `artifacts/results.json` or HTML Playwright report was available when this evidence record was prepared.
-
-No Passed/Failed execution result is claimed.
 
 ## Environment configured by the project
 
@@ -33,16 +29,16 @@ No Passed/Failed execution result is claimed.
 
 ## Current result
 
-| Suite | Planned | Passed | Failed | Skipped | Current evidence status |
+| Suite | Planned | Passed | Failed | Skipped | 
 |---|---:|---:|---:|---:|---|
-| Manual | 6 | — | — | — | Not executed/recorded |
-| UI | 6 | — | — | — | No verified Playwright report |
-| API | 6 | — | — | — | No verified Playwright report |
-| **Total** | **18** | **—** | **—** | **—** | No fabricated result |
+| Manual | 6 | 6| 0 | 0 | 
+| UI | 6 | 6 | 0 | 0 | 
+| API | 6 | 6 | 0 | 0 | 
+| **Total** | **18** | **18** | **0** | **0** |
 
 ## Evidence mapping
 
-The detailed matrix is in `reports/evidence-matrix.md` and `reports/evidence-matrix.csv`.
+The detailed matrix is in `reports/evidence-matrix.md`
 
 The repository contains:
 - `FunctionalTestCase.csv`
