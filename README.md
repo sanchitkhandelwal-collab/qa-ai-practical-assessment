@@ -1,1 +1,0 @@
-# qa-ai-practical-assessment
