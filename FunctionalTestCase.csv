@@ -1,0 +1,19 @@
+Test ID,Layer,Test Case,Type,Priority,Steps / Objective,Expected Result
+MAN-01,UI,Registration with valid unique customer,Smoke,High,Register a new customer with valid required details,Registration succeeds and user can continue to login
+MAN-02,UI,Login with registered credentials,Smoke,High,Login using a valid registered account,User is authenticated and account UI is available
+MAN-03,UI,Search and open a product,Regression,Medium,Search for a known product and open its details,Matching product is displayed and detail page opens
+MAN-04,UI,Add multiple products and update quantity,Regression,High,Add two products and change one quantity in cart,Cart reflects selected products and updated quantity/total
+MAN-05,UI,Checkout using Cash on Delivery,Smoke,Critical,Complete checkout with valid customer data and Cash on Delivery,Order/invoice generation succeeds
+MAN-06,UI,Invoice requires second confirmation,Regression,High,"On invoice flow, perform required confirmation twice",Invoice ID is generated/displayed after the required confirmation sequence
+UI-01,UI,Registration + login,Smoke,High,Create unique account then authenticate,Successful registration/login
+UI-02,UI,Login negative validation,Regression,Medium,Submit invalid login credentials,Application rejects login and shows validation/error feedback
+UI-03,UI,Product search,Regression,Medium,Search by product name,Relevant search result is shown
+UI-04,UI,Cart add/update,Regression,High,"Add product, open cart and update quantity",Cart quantity and total update correctly
+UI-05,UI,Checkout + invoice,Smoke,Critical,Complete checkout with Cash on Delivery and confirm twice,Invoice/order is generated
+UI-06,UI,Empty cart / checkout guard,Regression,Medium,Attempt checkout without required cart state,Application prevents invalid checkout and keeps user in a valid state
+API-01,API,Register user,Smoke,High,POST valid unique registration payload,2xx response and user creation contract are valid
+API-02,API,Login and obtain token,Smoke,Critical,POST registered credentials to login,2xx response contains usable bearer token
+API-03,API,Create cart with token,Smoke,High,Create cart using authenticated context,2xx response contains cart identifier
+API-04,API,Retrieve products,Regression,Medium,GET products,2xx response and product collection schema are valid
+API-05,API,Add product to cart and verify cart,Regression,High,Add a valid product then retrieve cart,Cart contains expected product/quantity
+API-06,API,Invoice validation with invalid payload,Regression,High,POST invoice with missing/invalid required data,4xx validation response; invalid invoice is not created
