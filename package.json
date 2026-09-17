@@ -1,0 +1,19 @@
+{
+  "name": "qa-ai-practical-assessment-toolshop",
+  "version": "2.0.0",
+  "private": true,
+  "description": "QA AI Practical Assessment - Practice Software Testing Toolshop",
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @Smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:ui": "playwright test tests/ui",
+    "test:api": "playwright test tests/api",
+    "test:headed": "playwright test --headed",
+    "report": "playwright show-report artifacts/playwright-report",
+    "lint:syntax": "node --check playwright.config.js && node --check utils/test-data.js && node --check utils/api-client.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}
